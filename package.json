@@ -10,9 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.3.4",
     "@nuxt/devtools": "latest",
+    "@types/howler": "^2.2.11",
     "@unocss/nuxt": "^0.58.0",
     "@vueuse/nuxt": "^10.7.0",
+    "eslint": "^8.55.0",
     "howler": "^2.2.4",
     "nuxt": "^3.8.2",
     "nuxt-primevue": "^0.2.2",
