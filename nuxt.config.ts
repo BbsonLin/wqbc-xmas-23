@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' }
   },
-  devtools: { enabled: false },
-  modules: ['@unocss/nuxt', 'nuxt-primevue', "@vueuse/nuxt"],
+  devtools: { enabled: true },
+  modules: ['@unocss/nuxt', 'nuxt-primevue', "@vueuse/nuxt", "@pinia/nuxt"],
   primevue: {
     components: {
       prefix: 'Prime',
@@ -14,5 +14,10 @@ export default defineNuxtConfig({
       ripple: true,
     }
   },
-  css: ['primevue/resources/themes/lara-dark-blue/theme.css']
+  css: ['primevue/resources/themes/lara-dark-blue/theme.css'],
+  runtimeConfig: {
+    app: {
+      openaiApiKey: process.env.OPENAI_API_KEY,
+    }
+  }
 })
