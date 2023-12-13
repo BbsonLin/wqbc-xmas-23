@@ -40,9 +40,9 @@ const playCount = ref(0)
 
 var sound = null
 
-document.querySelector('html')!.style.backgroundColor = '#faf3eb'
-
 onMounted(() => {
+  document.querySelector('html')!.style.backgroundColor = '#faf3eb'
+
   sound = new Howl({
     src: [`/assets/audio/${route.params.id}-pos.mp3`],
     volume: 0.5,
