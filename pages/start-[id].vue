@@ -1,21 +1,21 @@
 <template>
   <PrimeAccordion class="mt-4 w-3/4">
-    <PrimeAccordionTab header="✉️ 打開來看看吧"
-      :pt="{
-        headerAction: ({ context }) => ({ 
-          class: [
-            'hover:bg-[#5e6843]',
-            { 'rounded-br-md rounded-bl-md bg-[#748052]': !context.active, 'rounded-br-0 rounded-bl-0 bg-[#5e6843]': context.active }
-          ]
-        }),
-        content: { class: 'bg-[#5e6843] text-coolGray-3' }
-      }">
+    <PrimeAccordionTab header="✉️ 打開來看看吧" :pt="{
+      headerAction: ({ context }) => ({
+        class: [
+          'hover:bg-[#5e6843]',
+          { 'rounded-br-md rounded-bl-md bg-[#748052]': !context.active, 'rounded-br-0 rounded-bl-0 bg-[#5e6843]': context.active }
+        ]
+      }),
+      content: { class: 'bg-[#5e6843] text-coolGray-3' }
+    }">
       <p class="m-0 text-2xl text-center">
         耶穌的一生是一段艱難的旅程。<br>
         祂最初就卑微地降生在馬槽中，<span class="text-[#f2d093] font-600">面臨環境的艱困</span>，<br>
         嬰孩時期為了躲避希律王的屠殺而<span class="text-[#f2d093] font-600">逃亡</span>至埃及。<br>
         工作開始後，也面對了無數的磨難與挑戰，<br>
-        受到魔鬼的三次<span class="text-[#f2d093] font-600">試探</span>、宗教領袖與人民的<span class="text-[#f2d093] font-600">針對和反感</span>，<br>
+        受到魔鬼的三次<span class="text-[#f2d093] font-600">試探</span>、宗教領袖與人民的<span
+          class="text-[#f2d093] font-600">針對和反感</span>，<br>
         以及被所愛的門徒的<span class="text-[#f2d093] font-600">否認和背叛</span>。<br>
         面對救贖的使命，祂也曾在禱告中表現出<span class="text-[#f2d093] font-600">痛苦與掙扎</span>，<br>
         但最終祂仍願意完成父神所交付給祂的旨意。<br>
@@ -28,6 +28,10 @@
       </p>
     </PrimeAccordionTab>
   </PrimeAccordion>
+
+  <PrimeButton class="mt-4 b-3 hover:bg-[#5e6843] hover:color-white b-[#5e6843] color-[#5e6843]"
+    :class="{ 'hidden': hideReading }" label="感謝你真實的分享😊" severity="secondary" outlined @click="$router.push('/')">
+  </PrimeButton>
 </template>
 
 <script setup lang="ts">
@@ -37,6 +41,7 @@ import { Howl } from 'howler'
 const route = useRoute()
 const router = useRouter()
 const playCount = ref(0)
+const hideReading = ref(true)
 
 var sound = null
 
@@ -51,7 +56,10 @@ onMounted(() => {
     onend: function () {
       console.log('Finished!');
       playCount.value++
-      if (playCount.value >= 20) {
+      if (playCount.value == 3) {
+        hideReading.value = false
+      }
+      if (playCount.value >= 10) {
         sound!.stop()
         router.push(`/`)
       }
@@ -60,9 +68,9 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  document.querySelector('html')!.style.backgroundColor = ''
   sound!.stop()
 })
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

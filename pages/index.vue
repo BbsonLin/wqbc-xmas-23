@@ -2,8 +2,8 @@
   <div class="typer-line text-lg md:text-3xl lg:text-5xl text-coolGray-4 anim-typewriter">過去的生命中，有哪句負面的話一直影響著你？</div>
   <PrimeTextarea class="mt-4 w-full md:w-2/3 b-coolGray b-3" rows="5" autoResize autofocus v-model="message">
   </PrimeTextarea>
-  <PrimeButton class="mt-4 b-3 hover:bg-coolGray hover:color-white" label="戴上耳機，聆聽看看這聲音... 🎧" size="large"
-    severity="secondary" :loading="loading" outlined @click="onSendMessage"></PrimeButton>
+  <PrimeButton class="mt-4 b-3 hover:bg-coolGray hover:color-white" :label="message == '' ?  '輸入看看，能聽到甚麼。' :'戴上耳機，聆聽看看這聲音... 🎧'" size="large"
+    severity="secondary" :loading="loading" outlined :disabled="message == ''" @click="onSendMessage"></PrimeButton>
 </template>
 
 <script setup lang="ts">
@@ -76,7 +76,7 @@ const onSendMessage = async () => {
     goRandom = true
   }
 
-  if (goRandom || value === null) {
+  if (goRandom || value === null || value === undefined) {
     // Generate random id from 1 to 11
     var id = Math.floor(Math.random() * 11) + 1
     store.setPlayId(id)
