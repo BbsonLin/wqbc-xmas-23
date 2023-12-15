@@ -51,6 +51,13 @@ const hideReading = ref(true)
 
 var sound = null
 
+onKeyStroke([' ', 'Enter'], (evt) => {
+  evt.preventDefault()
+  if (!hideReading.value) {
+    router.push(`/`)
+  }
+})
+
 onMounted(() => {
   document.querySelector('html')!.style.backgroundColor = '#faf3eb'
 
@@ -62,7 +69,7 @@ onMounted(() => {
     onend: function () {
       console.log('Finished!');
       playCount.value++
-      if (playCount.value == 2) {
+      if (playCount.value == 1) {
         hideReading.value = false
       }
       if (playCount.value >= 10) {

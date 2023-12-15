@@ -19,10 +19,18 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { Howl } from 'howler'
 
 const route = useRoute()
+const router = useRouter()
 const hideLeave = ref(true)
 const playCount = ref(0)
 
 var sound = null
+
+onKeyStroke([' ', 'Enter'], (evt) => {
+  evt.preventDefault()
+  if (!hideLeave.value) {
+    router.push(`/start-${route.params.id}`)
+  }
+})
 
 onMounted(() => {
   sound = new Howl({

@@ -32,6 +32,16 @@ const visible = ref(false)
 const hideReading = ref(true)
 const playCount = ref(0)
 
+onKeyStroke([" ", "Enter"], (evt) => {
+  console.log('Key pressed', evt)
+  evt.preventDefault()
+  if (visible.value) {
+    onListenPositive()
+  } else {
+    onReadBible()
+  }
+})
+
 const onReadBible = () => {
   visible.value = true
   // sound!.stop()
