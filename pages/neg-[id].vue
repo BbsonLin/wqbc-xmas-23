@@ -91,7 +91,7 @@ const sketch = (p5) => {
         p5.fill("rgb(58, 58, 58)")
         p5.translate(-50, 0)
       } else {
-        p5.fill("rgba(102, 102, 102, 0.5)")
+        p5.fill("rgb(102, 102, 102)")
       }
 
       for (var i = 0; i < window.screen.width; i += textLength) {
