@@ -7,8 +7,9 @@
     <span class="text-lg md:text-4xl lg:text-5xl text-coolGray-3 play-text">人生這段路，</span>
     <span class="text-lg md:text-4xl lg:text-5xl text-coolGray-3 play-text">祂也走過 ...</span>
   </div>
-  <PrimeButton class="mt-4 b-3 hover:bg-coolGray hover:color-white" :class="{ 'hidden': hideLeave }"
-    label="耶穌曾受過的苦 " size="large" severity="secondary" outlined @click="$router.push(`/start-${route.params.id}`)"></PrimeButton>
+  <PrimeButton class="mt-4 b-3 hover:bg-coolGray hover:color-white" :class=" { 'hidden': hideLeave } "
+    :label="playCount >= 2 ? '耶穌曾受過的苦 👆' : '耶穌曾受過的苦'" size ="large" severity="secondary" outlined
+    @click="$router.push(`/start-${ route.params.id } `)"></PrimeButton>
 
   <!-- <button @click="sound.play()">PLAY</button> -->
 </template>
