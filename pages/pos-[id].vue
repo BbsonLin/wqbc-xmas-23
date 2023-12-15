@@ -9,7 +9,7 @@
   </div>
   <PrimeButton class="mt-4 b-3 hover:bg-coolGray hover:color-white" :class=" { 'hidden': hideLeave } "
     :label="playCount >= 2 ? '耶穌曾受過的苦 👆' : '耶穌曾受過的苦'" size ="large" severity="secondary" outlined
-    @click="$router.push(`/start-${ route.params.id } `)"></PrimeButton>
+    @click="$router.push(`/start-${ route.params.id }`)"></PrimeButton>
 
   <!-- <button @click="sound.play()">PLAY</button> -->
 </template>
