@@ -62,7 +62,7 @@ onMounted(() => {
     onend: function () {
       console.log('Finished!');
       playCount.value++
-      if (playCount.value == 3) {
+      if (playCount.value == 2) {
         hideReading.value = false
       }
       if (playCount.value >= 10) {
