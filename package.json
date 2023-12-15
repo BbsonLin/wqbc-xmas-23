@@ -1,7 +1,6 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
+  "name": "wqbc-xmas-23",
+  "version": "23.1215.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

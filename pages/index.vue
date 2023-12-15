@@ -76,7 +76,7 @@ const onSendMessage = async () => {
     goRandom = true
   }
 
-  if (goRandom || value === null || value === undefined) {
+  if (goRandom || value === null || value === undefined || value.data.length === 0) {
     // Generate random id from 1 to 11
     var id = Math.floor(Math.random() * 11) + 1
     store.setPlayId(id)
