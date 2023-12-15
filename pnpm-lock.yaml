@@ -38,6 +38,12 @@ devDependencies:
   openai:
     specifier: ^4.20.1
     version: 4.20.1
+  p5:
+    specifier: ^1.9.0
+    version: 1.9.0
+  p5vue:
+    specifier: ^0.0.7
+    version: 0.0.7(typescript@5.3.3)
   vue:
     specifier: ^3.3.8
     version: 3.3.10(typescript@5.3.3)
@@ -2034,6 +2040,10 @@ packages:
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
+    dev: true
+
+  /@types/p5@1.7.4:
+    resolution: {integrity: sha512-cMF3SvlBSzJV9m3enUYBx9UvJmQP9fxmPS17EDtYJVCQwwNMc/BRrDtHUHaxZH+BhuESNuUnfUKNVpJIjRT+Xw==}
     dev: true
 
   /@types/resolve@1.20.2:
@@ -6322,6 +6332,20 @@ packages:
   /p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
+    dev: true
+
+  /p5@1.9.0:
+    resolution: {integrity: sha512-+5/hz0ZokCDf7BMMAeemE7FIo7gFZK7ImL62acHLXZwerGjqj+171bnaAWj4aCFCx6fwysAr2U7/AKuPyPhehA==}
+    dev: true
+
+  /p5vue@0.0.7(typescript@5.3.3):
+    resolution: {integrity: sha512-fXxEdTTOL57mDw0HRjPaCQeg4z5fZ1K5y2hYwyORe8i0po9JRNfIt6KjX+YT9YtSLcl4meDpqEiz4y86BJ+dAw==}
+    dependencies:
+      '@types/p5': 1.7.4
+      p5: 1.9.0
+      vue: 3.3.10(typescript@5.3.3)
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /pacote@17.0.5:

@@ -1,4 +1,8 @@
 <template>
+  <PrimeButton class="mt-4 b-3 hover:bg-[#5e6843] hover:color-white b-[#5e6843] color-[#5e6843]"
+    :class="{ 'hidden': hideReading }" label="感謝你真實的分享😊" severity="secondary" outlined @click="$router.push('/')">
+  </PrimeButton>
+
   <PrimeAccordion class="lg:mt-2 w-9/10 lg:w-3/4">
     <PrimeAccordionTab header="✉️ 打開來看看吧" :pt="{
       headerAction: ({ context }) => ({
@@ -33,9 +37,7 @@
     </PrimeAccordionTab>
   </PrimeAccordion>
 
-  <PrimeButton class="mt-4 b-3 hover:bg-[#5e6843] hover:color-white b-[#5e6843] color-[#5e6843]"
-    :class="{ 'hidden': hideReading }" label="感謝你真實的分享😊" severity="secondary" outlined @click="$router.push('/')">
-  </PrimeButton>
+  
 </template>
 
 <script setup lang="ts">

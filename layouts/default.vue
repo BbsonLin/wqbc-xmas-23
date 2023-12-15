@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center mt-10 md:mt-25">
+  <div class="flex flex-col items-center pt-10 md:pt-25">
     <slot />
   </div>
 </template>
