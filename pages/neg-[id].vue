@@ -51,7 +51,7 @@ onMounted(() => {
       if (playCount.value == 1) {
         hideReading.value = false
       }
-      if (playCount.value > 3) {
+      if (playCount.value > 5) {
         sound!.stop()
       }
     }
@@ -86,7 +86,13 @@ const sketch = (p5) => {
 
     for (var o = 0; o < window.screen.height; o += 60) {
       p5.push()
-      lineCount++
+      
+      if (Math.floor(p5.frameCount / 60) > lineCount) {
+        lineCount++
+      }
+      if (lineCount > 10) {
+        break
+      }
       if (lineCount % 2 == 0) {
         p5.fill("rgb(58, 58, 58)")
         p5.translate(-50, 0)
@@ -128,13 +134,17 @@ const sketch = (p5) => {
 }
 
 .anim-typewriter {
-  animation: typewriter 4s steps(50) 1s 1 normal both,
+  animation: typewriter 12s steps(50) 1s infinite normal both,
     blinkTextCursor 500ms steps(50) infinite normal;
 }
 
 @keyframes typewriter {
   from {
     width: 0;
+  }
+
+  30% {
+    width: 22em;
   }
 
   to {

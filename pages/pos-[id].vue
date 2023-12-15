@@ -33,7 +33,7 @@ onMounted(() => {
       console.log('Finished!');
       hideLeave.value = false
       playCount.value++
-      if (playCount.value > 3) {
+      if (playCount.value > 5) {
         sound!.stop()
       }
     },

@@ -100,13 +100,17 @@ textarea {
 }
 
 .anim-typewriter {
-  animation: typewriter 4s steps(50) 1s 1 normal both,
+  animation: typewriter 12s steps(50) 1s infinite normal both,
     blinkTextCursor 500ms steps(50) infinite normal;
 }
 
 @keyframes typewriter {
   from {
     width: 0;
+  }
+
+  30% {
+    width: 22em;
   }
 
   to {

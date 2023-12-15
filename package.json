@@ -1,6 +1,6 @@
 {
   "name": "wqbc-xmas-23",
-  "version": "23.1216.0",
+  "version": "23.1216.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
